@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1 Создать аккаунт на PDMR
+  form(action="/register", method="post")
+    if messages.length
+      ul
+        each message in messages
+          li= message
+
+    div
+      input(type="text", name="username" placeholder="Логин")
+    div
+      input(type="password", name="password" placeholder="Пароль")
+    div
+      input(type="submit", value="Регистрация")
+
+  a(href="/login") Войти под существующем аккаунтом

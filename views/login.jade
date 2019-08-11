@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1 Войти на PDMR
+  form(action="/login", method="post")
+    if messages.length
+      ul
+        each message in messages
+          li= message
+
+    div
+      input(type="text", name="username" placeholder="Логин")
+    div
+      input(type="password", name="password" placeholder="Пароль")
+    div
+      input(type="submit", value="Вход")
+
+  a(href="/register") Создать аккаунт
