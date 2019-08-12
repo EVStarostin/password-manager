@@ -1,18 +1,24 @@
 extends layout
 
 block content
-  h1 Создать аккаунт на PDMR
-  form(action="/register", method="post")
+  fieldset
+    legend
+      h1 Регистрация в менеджере паролей
+
+    form(action="/register", method="post")
+      p
+        input(type="name", name="username" placeholder="Логин" required)
+      p
+        input(type="password", name="password" placeholder="Пароль" required)
+      p
+        input(type="submit", value="Зарегистрироваться")
+
     if messages.length
+      hr
       ul
         each message in messages
           li= message
+      hr
 
-    div
-      input(type="text", name="username" placeholder="Логин")
-    div
-      input(type="password", name="password" placeholder="Пароль")
-    div
-      input(type="submit", value="Регистрация")
-
-  a(href="/login") Войти под существующем аккаунтом
+  p
+    a(href="/login") Войти под существующем аккаунтом

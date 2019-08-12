@@ -18,6 +18,7 @@ const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const logoutRouter = require('./routes/logout');
 const registerRouter = require('./routes/register');
+const accountRouter = require('./routes/account');
 
 mongoose.connect('mongodb://localhost:27017/password-manager-database', {useNewUrlParser: true});
 
@@ -47,6 +48,7 @@ app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/logout', logoutRouter);
+app.use('/account', accountRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

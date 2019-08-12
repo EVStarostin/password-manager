@@ -5,7 +5,7 @@ const User = require('../models/user');
 var router = express.Router();
 
 router.get('/', (req, res, next) => {
-  res.render('register', { title: 'Регистрация на PDMR | PDMR', messages: req.flash('error') });
+  res.render('register', { title: 'Регистрация | PDMR', messages: req.flash('error') });
 });
 
 router.post('/', (req, res, next) => {

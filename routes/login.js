@@ -4,7 +4,7 @@ var passport = require('passport');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Вход на PDMR | PDMR', messages: req.flash('error') });
+  res.render('login', { title: 'Вход | PDMR', messages: req.flash('error') });
 });
 
 router.post('/', 

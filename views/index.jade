@@ -1,7 +1,34 @@
 extends layout
 
 block content
-  p #{user.username}&nbsp;
-    a(href="/logout") выйти
+  hr
 
-  h1 Здесь будет список ваших логинов и паролей
+  header
+    div(style="float: right;")= user.username
+      &nbsp;
+      a(href="/logout") Выйти
+
+  nav
+    a(href="/account") Новая учетная запись
+
+  div(style="clear: both;")
+
+  hr
+
+  main
+    h1(style="text-align: center") Список учётных записей
+
+    if accounts.length
+      ul
+        each account in accounts
+          li
+            h3= account.name
+            span Логин: 
+              strong= account.login
+            br
+            span Пароль: 
+              strong= account.password
+    else
+      span Не найдено ни одной учётной записи
+
+  hr

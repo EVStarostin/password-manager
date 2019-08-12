@@ -1,10 +1,15 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
+const Account = require('../models/account');
 
-/* GET home page. */
+/* GET home page. */  
 router.get('/', ensureLoggedIn(), (req, res, next) => {
-  res.render('index', { title: 'Главная | PDMR', user: req.user });
+  Account.find({ user_id: req.user._id })
+    .then((accounts) => { 
+      res.render('index', { title: 'Главная | PDMR', user: req.user, accounts: accounts });
+    })
+    .catch((err) => { console.error(err.message) })
 });
 
 module.exports = router;
