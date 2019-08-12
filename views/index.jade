@@ -2,14 +2,14 @@ extends layout
 
 block content
   header
-    div(style="float: right;")= user.username
+    div(style="float: right")= user.username
       &nbsp;
       a(href="/logout") Выйти
 
     nav
       a(href="/account") Новая учетная запись
 
-  div(style="clear: both;")
+  div(style="clear: both")
 
   main
     hr
@@ -27,4 +27,4 @@ block content
             span Пароль: 
               strong= account.password
     else
-      span Не найдено ни одной учётной записи
+      p Не найдено ни одной учётной записи
