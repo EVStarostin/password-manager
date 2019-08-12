@@ -6,19 +6,13 @@ block content
       h1 Регистрация в менеджере паролей
 
     form(action="/register", method="post")
-      p
-        input(type="name", name="username" placeholder="Логин" required)
-      p
-        input(type="password", name="password" placeholder="Пароль" required)
-      p
-        input(type="submit", value="Зарегистрироваться")
+      input(type="text", name="username" placeholder="Логин" required)
+      input(type="password", name="password" placeholder="Пароль" required)
+      button(type="submit") Зарегистрироваться
 
     if messages.length
-      hr
       ul
         each message in messages
           li= message
-      hr
 
-  p
     a(href="/login") Войти под существующем аккаунтом
