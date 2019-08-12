@@ -3,6 +3,11 @@ body {
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+header {
+  font-size: 1.2em;
+  padding: 1em 0;
+}
+
 h1 {
   font-size: 1.8em;
   margin: 0;
