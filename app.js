@@ -20,7 +20,9 @@ const logoutRouter = require('./routes/logout');
 const registerRouter = require('./routes/register');
 const accountRouter = require('./routes/account');
 
-mongoose.connect('mongodb://localhost:27017/password-manager-database', {useNewUrlParser: true});
+const dev_db_url = 'mongodb://localhost/password-manager-database'
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
+mongoose.connect(mongoDB, {useNewUrlParser: true});
 
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
