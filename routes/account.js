@@ -4,11 +4,11 @@ const Account = require('../models/account');
 
 const router = express.Router();
 
-router.get('/', ensureLoggedIn('../login'), (req, res, next) => {
+router.get('/', ensureLoggedIn('/pm/login'), (req, res, next) => {
   res.render('account', { title: 'Новая учётная запись | PDMR', user: req.user });
 });
 
-router.post('/', ensureLoggedIn('../login'), (req, res, next) => {
+router.post('/', ensureLoggedIn('/pm/login'), (req, res, next) => {
   const account = new Account({
     name: req.body.name,
     login: req.body.login,
@@ -18,8 +18,8 @@ router.post('/', ensureLoggedIn('../login'), (req, res, next) => {
 
   account
     .save()
-    .then(() => { res.redirect('..') })
-    .catch((err) => { res.redirect('../account') });
+    .then(() => { res.redirect('/pm') })
+    .catch((err) => { res.redirect('/pm/account') });
 });
 
 module.exports = router;
