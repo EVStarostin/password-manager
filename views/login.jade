@@ -5,7 +5,7 @@ block content
     legend
       h1 Вход в менеджер паролей
 
-    form(action="/login", method="post")
+    form(action="", method="post")
       input(type="text", name="username", placeholder="Логин", required)
       input(type="password", name="password", placeholder="Пароль", required)
       button(type="submit") Войти
@@ -15,7 +15,7 @@ block content
         each message in messages
           li= message
 
-    a(href="/register") Создать новую учётную запись
+    a(href="../register") Создать новую учётную запись
 
 
 

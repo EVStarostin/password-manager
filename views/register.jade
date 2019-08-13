@@ -5,7 +5,7 @@ block content
     legend
       h1 Регистрация в менеджере паролей
 
-    form(action="/register", method="post")
+    form(action="", method="post")
       input(type="text", name="username", placeholder="Логин", required)
       input(type="password", name="password", placeholder="Пароль", required)
       button(type="submit") Зарегистрироваться
@@ -15,4 +15,4 @@ block content
         each message in messages
           li= message
 
-    a(href="/login") Войти под существующем аккаунтом
+    a(href="../login") Войти под существующем аккаунтом

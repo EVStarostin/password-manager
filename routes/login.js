@@ -8,8 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', 
-  passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login', failureFlash: true }),
-  (req, res) => { res.redirect('/') }
+  passport.authenticate('local', { successRedirect: '..', failureRedirect: '../login', failureFlash: true })
 );
 
 module.exports = router;
