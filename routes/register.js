@@ -12,7 +12,7 @@ router.post('/', (req, res, next) => {
   User.register(new User({ username : req.body.username }), req.body.password, (err, user) => {
     if (err) {
       req.flash('error', err.message);
-      return res.redirect('/pm/register');
+      return res.redirect('register');
     }
 
     passport.authenticate('local')(req, res, () => {
@@ -20,7 +20,7 @@ router.post('/', (req, res, next) => {
         if (err) {
           return next(err);
         }
-        res.redirect('/pm');
+        res.redirect('');
       });
     });
   });
