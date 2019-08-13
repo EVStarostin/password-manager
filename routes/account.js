@@ -18,7 +18,7 @@ router.post('/', ensureLoggedIn('login'), (req, res, next) => {
 
   account
     .save()
-    .then(() => { res.redirect('') })
+    .then(() => { res.redirect('./') })
     .catch((err) => { res.redirect('account') });
 });
 
