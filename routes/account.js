@@ -13,7 +13,7 @@ router.post('/', ensureLoggedIn('login'), (req, res, next) => {
     name: req.body.name,
     login: req.body.login,
     password: req.body.password,
-    user_id: req.body.user_id
+    user_id: req.user._id
   });
 
   account
